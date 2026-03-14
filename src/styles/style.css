@@ -1,10 +1,237 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* 388087 */
+:root {
+  --primary-background:linear-gradient(90deg, hsla(198, 65%, 34%, 1) 0%, hsla(178, 44%, 32%, 1) 100%);
+  --primary-blue: hsla(198, 65%, 34%, 1);
+}
+body{
+ background: var(--primary-background);
+color: #fff;
+}
+ /* on-off toggle */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+.switch input {
+  display: none;
 }
 
-h1{
-    margin: 40px;
-    text-align: center;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 26px;
+  transition: 0.3s;
 }
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 2px;
+  background: rgb(68, 68, 68,0.89);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.switch input:checked +.slider::before{
+  background: var(--primary-background);
+}
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+header{
+  background-color: #fff;
+  color:var(--primary-blue);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding: 10px 30px;
+}
+.metrics{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.metrics p{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.head{
+  flex: 1;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.switch-container{
+  transform: translateY(3px);
+}
+
+/* segment */ 
+.search-container{
+   padding-top: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.input-container{
+  position: relative;
+}
+.input-container input{
+   outline: none;
+   width: 70vw;
+   max-width: 600px;
+   height: 50px;
+   border-top-left-radius: 8px;
+   border-bottom-left-radius: 8px;
+   border: none;
+   padding: 0 20px;
+   font-size: 20px;
+   color: #333;
+}
+  
+.error-text {
+  position: absolute;
+  padding: 5px 20px;
+  background-color: transparent;  
+  color: rgba(3,3,3,0.8);
+  background-color: #f4f4f4; 
+  font-weight: 400;
+  font-size:18px;
+  height:40px;
+  bottom: -40px;
+  left: 0;
+  width: 70vw;
+  max-width: 600px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+ 
+.button-container{
+  height: 50px;
+  background-color: #fff;
+  border-left: 1px solid #c7b5b5;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding-top:6px;
+  transition: all 0.2s linear;
+}
+
+.button-container:hover{
+  background-color: #efefef;
+}
+.button-container #search-btn{
+  width:56px;
+  height:40px;
+  fill: var(--primary-background);
+  cursor: pointer;
+  font-weight: 600;
+}
+ 
+.success{
+  padding: 40px 56px 20px;
+  display: grid;
+  gap: 23px;
+  grid-template-columns: repeat(auto-fit,minmax(245px,1fr));
+}
+
+.success .weather{
+  border-radius: 8px;
+  box-shadow: 2px 4px 2px #333;
+  color: #000;
+  background-color: #fff;
+  padding: 20px 25px;
+  display: flex;
+}
+.success .para-container{
+  flex: 1;
+}
+.success .city{
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding-bottom: 15px;
+  text-transform: capitalize;
+}
+.success .one{
+  display: flex;
+}
+.one p{
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.two{
+  text-align: right;
+  transform: translateY(-12px);
+
+}
+.success img{
+  transform: translateY(-20px);
+  width: 80px;
+  height:100px
+}
+.pending .spinner-container{
+  padding-top: 40px;
+  text-align: center;
+}
+.pending #spinner{
+  width: 90px;
+  height: 90px;
+  margin: 5px auto;
+}
+ 
+.pending .weather{
+  display: none;
+}
+
+/* major cities styling */
+.major-weather-container{
+  padding: 40px 56px 20px;
+  display: grid;
+  gap: 23px;
+  grid-template-columns: repeat(3,1fr);
+}
+.major-container .weather{
+  border-radius: 8px;
+  box-shadow: 2px 4px 2px #333;
+  color: #000;
+  background-color: #fff;
+  padding: 20px 25px;
+  display: flex;
+}
+.major-container .para-container{
+  flex: 1;
+}
+.major-container .city{
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding-bottom: 15px;
+  text-transform: capitalize;
+}
+.major-container .one{
+  display: flex;
+}
+ 
+.major-container img{
+  transform: translateY(-20px);
+  width: 80px;
+  height:100px
+}
+
+.major-header{
+   font-size:1.78rem;
+   font-weight: 600;
+   text-align: center;
+   display: block;
+   padding: 40px 10px 40px;
+  }

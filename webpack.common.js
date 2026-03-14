@@ -20,7 +20,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/images", to: "images" }, // copies all images to dist/images
+        { from: "src/images", to: "images", noErrorOnMissing: true}, 
+        // copies all images to dist/images
       ],
     }),
   ],
