@@ -9,4 +9,5 @@ export const weatherIcons = {
   "rain-line": "https://bmcdn.nl/assets/weather-icons/v2.0/line/rain.svg",
   "tornado-line": "https://bmcdn.nl/assets/weather-icons/v2.0/line/tornado.svg",
   "clear-night-line":"https://bmcdn.nl/assets/weather-icons/v2.0/line/clear-night.svg",
+  "cloudy":"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast.svg",
 };

@@ -25,6 +25,7 @@
      };
      TotalWeathers.push(weather);
    }
+   console.log(TotalWeathers);
    return TotalWeathers;
  };
 
